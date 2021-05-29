@@ -21,9 +21,8 @@ class chat_bot:
             ]
         )
 
-    def bot_respose(self, msg):
+    def chat(self, msg):
         if msg:
-            text = self.chatbot.get_response(msg)
+            return self.chatbot.get_response(msg)
         else:
-            text = "Please send me some text to start the conversation"
-        return text
+            return "Send me some text to start the conversation"
