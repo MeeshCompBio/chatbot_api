@@ -1,0 +1,15 @@
+version: "3"
+services:
+  housing_api:
+    build:
+      context: .
+    ports:
+      - "8887:80"
+    volumes:
+    - ./test:/mnt/test:shared
+    cap_add:
+    - SYS_ADMIN
+    security_opt:
+    - apparmor:unconfined
+    devices:
+    - /dev/fuse
