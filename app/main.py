@@ -11,6 +11,6 @@ class Message(BaseModel):
     text: str
 
 
-@app.post("/chat")
+@app.post("/chat/")
 async def chat_bot(msg: Message):
     return str(api_bot.chat(msg.text))
