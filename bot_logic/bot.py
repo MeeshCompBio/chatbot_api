@@ -2,8 +2,8 @@ from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 
 
-class bot:
-    def __init__(self) -> None:
+class chat_bot:
+    def __init__(self):
         self.chatbot = ChatBot("Benoit")
         trainer = ListTrainer(self.chatbot)
         trainer.train(
@@ -16,9 +16,14 @@ class bot:
                 "No I dont",
                 "What is your favorite type of keyboard",
                 "Split",
-                "Why is that?" "Because they are more ergonomic",
+                "Why is that?",
+                "Because they are more ergonomic",
             ]
         )
 
     def bot_respose(self, msg):
-        return self.chatbot.get_response(msg)
+        if msg:
+            text = self.chatbot.get_response(msg)
+        else:
+            text = "Please send me some text to start the conversation"
+        return text
